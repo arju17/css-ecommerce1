@@ -111,7 +111,8 @@ nav{
     transition: var(--transition);
 }
 .nav-link:hover{
-    color: black;
+    color: salmon;
+    text-decoration: overline;
 }
 .profile-icon{
     width: 3rem;
@@ -126,11 +127,35 @@ nav{
     transform: scale(1.2);
 }
 .nav-lower{
-    min-height: 10vh;
-    background-color: var(--secondary-color);
+    min-height: 11vh;
+    background-color:black;
 }
-.nav-brand{
-    font-size: 2rem;
+.nav-container{
+    justify-content: left;
+    margin-left: 0;
+    position: relative;
+}
+.nav-container h2{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 3.5em;
+}
+
+.nav-container h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 2px #03a9f4;
+}
+.nav-container h2:nth-child(2){
+    color: #03a9f4;
+    animation: animate 1.5s ease-in-out infinite;
+}
+@keyframes animate{
+    0%, 100%{
+        clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+    50%{
+        clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+    }
 }
 /*nav bar ends here*/
 /*Footer starts here*/
@@ -281,13 +306,15 @@ padding: var(--padding);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 1rem;
 }
 .product_details-left{
     flex:1;
 }
 .product_details-left img{
     height: 20rem;
-    width: 30rem;
+    width: 20rem;
+    margin-left: 1rem;
 }
 
 .product_details-right{
@@ -459,6 +486,20 @@ padding: var(--padding);
     width: 80%;
 }
 /*contact ends here*/
+/*log out page start here*/
+.main-logout{
+    width: 100%;
+    height: 70vh;
+    padding: 5rem;
+}
+.logout-title{
+    text-align: center;
+    color: tomato;
+    font-size: 3rem;
+    transition: 2s;
+    font-weight: bolder;
+}
+/*log out page start here*/
 
 /*main ends here*/
 
@@ -509,7 +550,9 @@ padding: var(--padding);
 .register .card, .login .card{
     width: 90%;
 }
-
+.product-details{
+    width: 90%;
+}
 
 @media(max-width:768px){
 .products, .flex-center{
@@ -527,5 +570,30 @@ padding: var(--padding);
     .profile{
         width: 100%;
     }
+    .product-details{
+        width: 80%;
+    }
+}
+@media (max-width:450px) {
+    .cart-items, .cart_payment{
+        width: 100%;
+    }
+    .form, .form-control{
+        width: 100%;
+    }
+    .form-control input, textarea{
+        width:100%;
+    }
+    .contact-address{
+        width: 100%;
+        
+    }
+    .register .card, .login .card{
+        width: 100%;
+    }
+    .product-details{
+        width: 80%;
+    }
+    
 }
 /*resposive section Ends Here*/
